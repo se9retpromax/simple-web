@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - PARADISE SHOP</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/products.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div id="particles-js"></div>
+    
+    <!-- Navigation -->
+    <nav class="paradise-nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-palm-tree"></i>
+                <span>PARADISE SHOP</span>
+                <div class="nav-wave"></div>
+            </div>
+            <div class="nav-links">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="products.html" class="active"><i class="fas fa-shopping-basket"></i> Products</a>
+                <a href="contact.html"><i class="fas fa-phone"></i> Contact</a>
+                <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="page-title tropical-gradient-text">Tropical Treasures</h1>
+        <div class="tropical-divider"></div>
+        <!-- Product Controls -->
+        <div class="product-filters">
+            <button class="btn btn-secondary filter-btn active" data-filter="all">
+                <i class="fas fa-star"></i> All
+            </button>
+            <button class="btn btn-outline filter-btn" data-filter="bot">
+                <i class="fas fa-robot"></i> Bots
+            </button>
+            <button class="btn btn-outline filter-btn" data-filter="web">
+                <i class="fas fa-globe"></i> Websites
+            </button>
+            <button class="btn btn-outline filter-btn" data-filter="tool">
+                <i class="fas fa-tools"></i> Tools
+            </button>
+        </div>
+
+        <!-- Sort Options -->
+        <div class="sort-options">
+            <select class="sort-select" id="sortSelect">
+                <option value="default">Sort by</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="rating">Top Rated</option>
+                <option value="name">Name: A-Z</option>
+            </select>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid">
+            <!-- Discord Bot Product -->
+            <div class="product-card bot" data-id="bot-1" data-price="49.99" data-rating="128">
+                <div class="product-badge">Hot Deal!</div>
+                <div class="product-image">
+                    <img src="images/discord-bot.png" alt="Discord Bot">
+                </div>
+                <h3>Tropical Discord Bot</h3>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    <span>(128 reviews)</span>
+                </div>
+                <p class="product-desc">Bring the spirit of the tropics to your Discord server with our AI-powered Tropical Discord Bot. Featuring a unique island personality, this bot offers advanced moderation tools, fun interactive features, and seamless integration with your community. Perfect for keeping your server lively and engaging.</p>
+                <div class="product-price">$49.99</div>
+                <button class="btn btn-primary add-to-cart" onclick="addToCart({
+                    id: 'bot-1',
+                    name: 'Tropical Discord Bot',
+                    price: 49.99,
+                    image: 'images/discord-bot.png'
+                })">
+                    <i class="fas fa-cart-plus"></i> Add to Cart
+                </button>
+            </div>
+
+            <!-- Website Product -->
+            <div class="product-card web" data-id="web-1" data-price="199.99" data-rating="234">
+                <div class="product-image">
+                    <img src="images/website-template.png" alt="Website Template">
+                </div>
+                <h3>Island Website Package</h3>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <span>(234 reviews)</span>
+                </div>
+                <p class="product-desc">Transform your online presence with our Island Website Package. This responsive website template features a stunning tropical design, complete with CMS integration for easy content management. Ideal for businesses looking to create a vibrant and engaging online experience.</p>
+                <div class="product-price">$199.99</div>
+                <button class="btn btn-primary add-to-cart" onclick="addToCart({
+                    id: 'web-1',
+                    name: 'Island Website Package',
+                    price: 199.99,
+                    image: 'images/website-template.png'
+                })">
+                    <i class="fas fa-cart-plus"></i> Add to Cart
+                </button>
+            </div>
+
+            <!-- Security Tool -->
+            <div class="product-card tool" data-id="tool-1" data-price="149.99" data-rating="89">
+                <div class="product-image">
+                    <img src="images/security.png" alt="Security Tool">
+                </div>
+                <h3>Beach Security Suite</h3>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <span>(89 reviews)</span>
+                </div>
+                <p class="product-desc">Ensure the safety of your digital assets with our Beach Security Suite. This comprehensive security solution offers robust DDoS protection, real-time monitoring, and advanced threat detection to keep your online presence secure. Perfect for businesses and individuals looking to safeguard their websites and applications.</p>
+                <div class="product-price">$149.99</div>
+                <button class="btn btn-primary add-to-cart" onclick="addToCart({
+                    id: 'tool-1',
+                    name: 'Beach Security Suite',
+                    price: 149.99,
+                    image: 'images/security.png'
+                })">
+                    <i class="fas fa-cart-plus"></i> Add to Cart
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Action Button -->
+    <button class="btn btn-float" id="supportBtn">
+        <i class="fas fa-question"></i>
+    </button>
+
+    <!-- Shopping Cart Preview -->
+    <div class="cart-preview" id="cartPreview">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Your Cart</h3>
+            <button class="close-cart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="checkout-btn">
+                <i class="fas fa-lock"></i> Checkout
+            </button>
+        </div>
+    </div>
+
+    <!-- Support Modal -->
+    <div class="support-modal" id="supportModal">
+        <div class="support-content">
+            <div class="support-header">
+                <h2><i class="fas fa-life-ring"></i> Paradise Support</h2>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="support-list">
+                <div class="support-category">
+                    <h3><i class="fas fa-shopping-cart"></i> Orders & Payment</h3>
+                    <ul>
+                        <li><i class="fas fa-credit-card"></i> Accepted payment methods</li>
+                        <li><i class="fas fa-truck"></i> Order tracking</li>
+                        <li><i class="fas fa-undo"></i> Return policy</li>
+                        <li><i class="fas fa-percent"></i> Discount codes</li>
+                    </ul>
+                </div>
+                <div class="support-category">
+                    <h3><i class="fas fa-tools"></i> Technical Support</h3>
+                    <ul>
+                        <li><i class="fas fa-download"></i> Download issues</li>
+                        <li><i class="fas fa-cog"></i> Installation help</li>
+                        <li><i class="fas fa-bug"></i> Bug reporting</li>
+                        <li><i class="fas fa-sync"></i> Updates & upgrades</li>
+                    </ul>
+                </div>
+                <div class="support-category">
+                    <h3><i class="fas fa-headset"></i> Contact Options</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> Email support</li>
+                        <li><i class="fas fa-comments"></i> Live chat</li>
+                        <li><i class="fas fa-phone"></i> Phone support</li>
+                        <li><i class="fas fa-ticket-alt"></i> Submit ticket</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="js/products.js"></script>
+</body>
+</html>
